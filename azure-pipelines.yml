@@ -10,20 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: false
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: "JaCoCo"
-    summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
-    reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
-    failIfCoverageEmpty: true
+  - bash: echo This is a script that could use $SYSTEM_ACCESSTOKEN
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+  - powershell: Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
