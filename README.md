@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/muthukumarchinnu/JavaTest/_apis/build/status/mkumar83.pipelines-java?branchName=master)](https://dev.azure.com/muthukumarchinnu/JavaTest/_build/latest?definitionId=1&branchName=master)
 
 # Contributing
 
