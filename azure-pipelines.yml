@@ -14,5 +14,5 @@ jobs:
   variables:
     x: format('{0:yyyyMMdd}', pipeline.startTime)
     a: $[counter(format('{0:yyyyMMdd}', pipeline.startTime), 100)]
-  steps:
+    steps:
     - bash: echo $(x) is incrmented by 100 to get $(a)
