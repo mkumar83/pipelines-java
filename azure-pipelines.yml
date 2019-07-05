@@ -2,8 +2,10 @@
 
 jobs:
 - job:
+  pool:
+    vmImage: 'macOS-10.13'
   variables:
     x: 1
-    a: $[counter(x, 0)]
+    a: 2
   steps:
     - bash: echo $(x) is incrmented by 0 to get $(a)
