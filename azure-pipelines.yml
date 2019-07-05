@@ -6,6 +6,6 @@ jobs:
     vmImage: 'macOS-10.13'
   variables:
     x: 1
-    a: $[counter(variables['x'], 0)]
+    a: $[counter(variables['x'], 2)]
   steps:
-    - bash: echo $(x) is incrmented by 0 to get $(a)
+    - bash: echo $(x) is incremented by 0 to get $(a)
