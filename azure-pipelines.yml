@@ -13,13 +13,11 @@ variables:
   maxversion: 0
   minversion: 1
   patchversion: 0
-  jobs:
-  - job: job1
-    variables:
-      jobvariable: 'MyJob'
-    steps:
-    - bash: echo For job $(jobvariable) the Build with version nuber $(maxversion).$(minversion).$(patchversion)
-    - bash: echo My current Build Number $(Build.BuildNumber)
-    - powershell: Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
-      env:
-        SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+
+steps:
+  - bash: echo For job $(jobvariable) the Build with version nuber $(maxversion).$(minversion).$(patchversion)
+  - bash: echo My current Build Number $(Build.BuildNumber)
+  - powershell: Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
