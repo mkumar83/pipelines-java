@@ -13,7 +13,7 @@ variables:
   maxversion: 0
   minversion: 1
   patchversion: 0
-jobs:
+  jobs:
   - job: job1
     variables:
       jobvariable: 'MyJob'
