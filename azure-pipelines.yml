@@ -9,8 +9,13 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  maxversion: 0
+  minversion: 1
+  patchversion: 0
+
 steps:
-  - bash: echo This is the location $(Agent.BuildDirectory)
+  - bash: echo Build with version nuber $(maxversion).$(minversion).$(patchversion)
   - bash: echo My current Build Number $(Build.BuildNumber)
   - powershell: Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
     env:
