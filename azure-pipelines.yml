@@ -10,6 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - bash: echo This is the location $(Agent.BuildDirectory)
+  - bash: echo This is the Machine Name 1 $env:MY_MACHINE_NAME or $MY_MACHINE_NAME_2
+    env:
+      MY_MACHINE_NAME: $(Agent.MachineName)
+      MY_MACHINE_NAME_2: $(Agent.MachineName)
   - bash: echo This is a script that could use $SYSTEM_ACCESSTOKEN
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
