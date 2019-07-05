@@ -1,0 +1,4 @@
+# File: templates/script-steps.yml
+steps:
+- script: echo Testing Script
+- script: echo End of Script for steps
