@@ -9,9 +9,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+parameters:
+    stage: ''
 jobs:
-- job:
-  variables:
-    a: $[counter(format('{0:yyyyMMdd}', pipeline.startTime), 100)]
-  steps:
-    - bash: echo $(a)
+- job: ${{ parameters.stage }}
+    steps:
+    - script:  |
+        rm $(base_location)/${{ parameters.stage }}/*
+        cp $(Build.SourcesDirectory)/* $(base_location)/${{ parameters.stage }}
+    displayName: 'Copy source code to ${{ parameters.stage }} destination'
