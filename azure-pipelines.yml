@@ -4,6 +4,6 @@ jobs:
 - job:
   variables:
     x: 1
-    a: $[.counter(1, 100)]
+    a: $[counter(10, 100)]
   steps:
     - bash: echo $(x) is incrmented by 100 to get $(a)
