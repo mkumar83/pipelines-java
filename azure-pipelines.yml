@@ -11,3 +11,4 @@ jobs:
   steps:
     - bash: echo $(x) is incremented by 0 to get $(a)
     - bash: echo Build Definition Name - $(name)
+    - bash: echo Build Number $(Build.BuildNumber)
