@@ -1,22 +1,9 @@
 # File: azure-pipelines.yml
 
 jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-16.04'
+- job:
+  variables:
+    x: format('{0:yyyyMMdd}', pipeline.startTime)
+    a: $[counter(format('{0:yyyyMMdd}', pipeline.startTime), 100)]
   steps:
-  - template: templates/script-steps.yml  # Template reference
-
-- job: macOS
-  pool:
-    vmImage: 'macOS-10.13'
-  steps:
-  - template: templates/script-steps.yml  # Template reference
-
-- job: Windows
-  pool:
-    vmImage: 'vs2017-win2016'
-  steps:
-  - script: echo This script runs before the template's steps, only on Windows.
-  - template: templates/script-steps.yml  # Template reference
-  - script: echo This step runs after the template's steps.
+    - bash: echo $(x) is incrmented by 100 to get $(a)
