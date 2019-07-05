@@ -5,7 +5,7 @@ jobs:
   pool:
     vmImage: 'macOS-10.13'
   variables:
-    x: 1
-    a: $[counter(variables['x'], 2)]
+    x: 10
+    a: $[counter(variables['x'], 5)]
   steps:
     - bash: echo $(x) is incremented by 0 to get $(a)
